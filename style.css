@@ -75,7 +75,7 @@ h1 { margin: 0; font-size: 1.6rem; }
   transition: transform .15s, border-color .15s;
   border-top: 4px solid var(--c, var(--accent));
 }
-.card:hover, .card:focus-visible { transform: translateY(-3px); border-color: var(--c, var(--accent)); outline: none; }
+.card:hover, .card:focus-within { transform: translateY(-3px); border-color: var(--c, var(--accent)); outline: none; }
 .card-head { display: flex; align-items: center; gap: 12px; }
 .card-icon {
   width: 48px; height: 48px; flex: none; border-radius: 12px;

@@ -1,5 +1,6 @@
 (() => {
-  const projects = window.PROJECTS || [];
+  const loaded = Array.isArray(window.PROJECTS);
+  const projects = loaded ? window.PROJECTS : [];
   const grid = document.getElementById("grid");
   const search = document.getElementById("search");
   const tagsBox = document.getElementById("tags");
@@ -51,6 +52,7 @@
     grid.innerHTML = list.map(card).join("");
     count.textContent = `${list.length} จาก ${projects.length} โปรเจค`;
     empty.hidden = list.length > 0;
+    if (!loaded) empty.textContent = "โหลด projects.js ไม่ได้ — ตรวจ syntax ในไฟล์ (ดูข้อผิดพลาดใน Console)";
   }
 
   tagsBox.addEventListener("click", (e) => {
@@ -67,7 +69,6 @@
 
   // ธีม: จำค่าที่ผู้ใช้เลือกไว้ในเบราว์เซอร์
   const root = document.documentElement;
-  try { const t = localStorage.getItem("theme"); if (t) root.dataset.theme = t; } catch {}
   document.getElementById("theme").addEventListener("click", () => {
     const dark = root.dataset.theme
       ? root.dataset.theme === "dark"
