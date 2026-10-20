@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HubsPatrol</title>
+  <meta name="description" content="หน้ารวมโปรเจคทั้งหมด">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="brand-icon">🧭</span>
+      <div>
+        <h1>HubsPatrol</h1>
+        <p class="sub">รวมทุกโปรเจคไว้ที่เดียว</p>
+      </div>
+    </div>
+    <button id="theme" class="icon-btn" aria-label="สลับธีม">◐</button>
+  </header>
+
+  <main>
+    <div class="controls">
+      <input id="search" type="search" placeholder="ค้นหาโปรเจค…  (กด / )" autocomplete="off">
+      <div id="tags" class="tags" role="group" aria-label="กรองตามแท็ก"></div>
+    </div>
+
+    <p id="count" class="count"></p>
+    <section id="grid" class="grid" aria-live="polite"></section>
+    <p id="empty" class="empty" hidden>ไม่พบโปรเจคที่ตรงกับการค้นหา</p>
+  </main>
+
+  <footer>เพิ่มโปรเจคใหม่ได้ที่ <code>projects.js</code></footer>
+
+  <script src="projects.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
